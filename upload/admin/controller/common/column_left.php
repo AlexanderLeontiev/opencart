@@ -658,13 +658,15 @@ class ControllerCommonColumnLeft extends Controller {
 				);
 			}	
 			
-			$data['menus'][] = array(
-				'id'       => 'menu-report',
-				'icon'	   => 'fa-bar-chart-o', 
-				'name'	   => $this->language->get('text_reports'),
-				'href'     => '',
-				'children' => $report
-			);	
+			if ($report) {
+				$data['menus'][] = array(
+					'id'       => 'menu-report',
+					'icon'	   => 'fa-bar-chart-o', 
+					'name'	   => $this->language->get('text_reports'),
+					'href'     => '',
+					'children' => $report
+				);
+			}
 			
 			// Stats
 			$data['text_complete_status'] = $this->language->get('text_complete_status');
